@@ -1,8 +1,7 @@
-#include <fstream>   // for std::ifstream && can allow read and write
-#include <iostream>  // for std::cout
-#include <set>       // for std::set
-#include <stdexcept> // for std::invalid_argument
-#include <string>    // for std::string && getline();
+#include <fstream>  // for std::ifstream && can allow read and write
+#include <iostream> // for std::cout
+#include <set>      // for std::set
+#include <string>   // for std::string && getline();
 
 int get_priority(char letter) {
   return int(letter) >= int('A') && int(letter) <= int('Z')
