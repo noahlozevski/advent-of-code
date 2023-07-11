@@ -27,6 +27,7 @@ void execute(std::unordered_map<int, std::queue<char>> &crates,
 
 void print_crates_without_clearing(
     std::unordered_map<int, std::queue<char>> crates) {
+
   for (auto it = crates.begin(); it != crates.end(); it++) {
     std::cout << it->first << ": ";
     std::queue<char> queue = it->second;
