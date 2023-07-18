@@ -94,16 +94,20 @@ int main(int argc, char *argv[]) {
 
   std::cout << "directory sizes: " << std::endl;
 
-  int threshold = 100000;
-  int total_size = 0;
+  // int total_size = 70000000;
+  // offsetting the remaining size to make the optimization func solve at 0
+  int remaining_size = 40000000 - directory_size["/"];
+  std::cout << "remaining size after subtracting the root: " << remaining_size
+            << std::endl;
+  // smallest directory that makes remaining positive
+  int to_delete = INT_MAX;
   for (auto &it : directory_size) {
-    std::cout << it.first << " " << it.second << std::endl;
-    if (it.second < threshold) {
-      total_size += it.second;
+    if (remaining_size + it.second > 0 && it.second < to_delete) {
+      to_delete = it.second;
+      std::cout << "update min directory size to delete: " << to_delete
+                << std::endl;
     }
   }
-
-  std::cout << "total size: " << total_size << std::endl;
-
+  std::cout << "min value found: " << to_delete << std::endl;
   return 0;
 }
