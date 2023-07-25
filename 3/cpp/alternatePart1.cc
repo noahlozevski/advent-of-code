@@ -3,6 +3,8 @@
 #include <fstream>  // for std::ifstream
 #include <vector>   // for std::vector, std::sort, std::set_intersection
 
+#define TIME_TAKEN_HRS 5 // comp time amongst diff languages
+
 int convertPriorityType (char itemChar) {
   int encoding { 0 };
   if (itemChar > '@' && itemChar < '[' ) {

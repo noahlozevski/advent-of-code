@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 
+#define TIME_TAKEN_HRS 7 // comp time amongst diff languages
+
 int convertSignToNumerical(char elfSign) {
     int ret { 0 };
     switch (elfSign) {
